@@ -333,3 +333,77 @@ h2 {
   opacity: 0.4;
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .head {
+    flex-direction: column; /* جعل اللوجو والقائمة تحت بعض في الشاشات الصغيرة */
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  body {
+    padding-top: 130px; /* زيادة الهامش العلوي لأن الهيدر أصبح أطول عمودياً */
+  }
+
+  .nav {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero_content h1 {
+    font-size: 38px; /* تصغير حجم العنوان ليناسب الشاشة */
+  }
+
+  .hero_content p {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .footer_content {
+    flex-direction: column; /* جعل عناصر الفوتر تحت بعضها */
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .footer_content ul li a:hover {
+    padding-left: 0; /* إلغاء حركة الزحزحة الجانبية في الهواتف لتفادي المشاكل البصرية */
+  }
+}
+
+/* 2. تكييف الشاشات الصغيرة جداً (مثل الهواتف المحمولة) */
+@media (max-width: 480px) {
+  .head {
+    padding: 10px;
+  }
+
+  body {
+    padding-top: 150px;
+  }
+
+  .nav {
+    gap: 10px;
+  }
+
+  .nav_links a, .cart a {
+    font-size: 13px; /* تصغير الخطوط للتنقل */
+    padding: 6px 12px;
+  }
+
+  .hero_content h1 {
+    font-size: 28px;
+  }
+
+  .offer_card, .product_card, .review_card {
+    width: 100%; /* جعل الكروت تأخذ عرض الشاشة بالكامل مع الحفاظ على البادينج */
+    max-width: 320px;
+  }
+
+  .modal_content {
+    width: 90%; /* تكييف حجم المودال المنبثق */
+    padding: 20px;
+  }
+}
