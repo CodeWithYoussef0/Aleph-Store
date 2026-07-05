@@ -1,0 +1,335 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle at top right, #1a1a2e, #16161a);
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding-top: 80px;
+  scroll-behavior: smooth;
+}
+
+.head {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 3px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 15px rgba(0, 173, 181, 0.4);
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #00adb5;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-shadow: 0 0 15px rgba(0, 173, 181, 0.4);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav_links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0.75;
+  transition: all 0.3s ease;
+}
+
+.nav_links a:hover {
+  opacity: 1;
+  color: #00adb5;
+  letter-spacing: 1px;
+  text-decoration: underline;
+}
+
+.cart a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.cart a:hover {
+  background-color: #00adb5;
+  color: #ffffff;
+  border-color: #00adb5;
+  box-shadow: 0 0 15px rgba(0, 173, 181, 0.4);
+}
+
+.cart span {
+  background-color: #00adb5;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.cart a:hover span {
+  background-color: #ffffff;
+  color: #00adb5;
+}
+
+.section {
+  padding: 100px 5%;
+  text-align: center;
+  min-height: 60vh;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+/* 1. Hero Section */
+.hero_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+.hero_content h1 {
+  font-size: 54px;
+  margin-bottom: 20px;
+}
+.hero_content h1 span {
+  color: #00adb5;
+}
+.hero_content p {
+  font-size: 18px;
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+.btn_primary {
+  background-color: #00adb5;
+  color: #fff;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(0, 173, 181, 0.4);
+  transition: 0.3s;
+}
+.btn_primary:hover {
+  transform: translateY(-3px);
+}
+
+/* 2. Offers & Products Grid */
+.offers_container,
+.products_grid,
+.reviews_container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.offer_card,
+.product_card,
+.review_card,
+.modal_content {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  width: 300px;
+  transition: 0.3s;
+}
+
+.product_card:hover,
+.offer_card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 173, 181, 0.3);
+}
+
+.product_img {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 22px;
+  color: #00adb5;
+  font-weight: 700;
+}
+
+.btn_buy,
+.btn_pay,
+.btn_download {
+  background: transparent;
+  border: 1px solid #00adb5;
+  color: #00adb5;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.btn_buy:hover,
+.btn_pay:hover,
+.btn_download:hover {
+  background: #00adb5;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(0, 173, 181, 0.4);
+}
+
+/* 3. Modals (الدفع والنجاح) */
+.modal {
+  display: none; /* مخفي تلقائياً ويظهر بالجافا سكريبت */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_content input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.btn_close {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.success_icon {
+  font-size: 60px;
+  color: #00adb5;
+  margin-bottom: 20px;
+}
+
+/* تنسيق الفوتر بالكامل */
+.main_footer {
+  background: rgba(0, 0, 0, 0.4); /* خلفية داكنة وشفافة */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* خط علوي رفيع جداً */
+  padding: 60px 5% 20px 5%;
+  margin-top: 50px;
+}
+/* توزيع عناصر الفوتر */
+.footer_content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer_brand {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer_brand p {
+  font-size: 14px;
+  opacity: 0.6;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+.footer_links,
+.footer_legal {
+  flex: 1;
+  min-width: 150px;
+}
+
+.footer_content h4 {
+  font-size: 18px;
+  color: #00adb5; /* لون التوهج اللبني */
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.footer_content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer_content ul li {
+  margin-bottom: 12px;
+}
+
+.footer_content ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.7;
+  transition: 0.3s ease;
+}
+
+/* حركة عند تمرير الماوس فوق روابط الفوتر */
+.footer_content ul li a:hover {
+  opacity: 1;
+  color: #00adb5;
+  padding-left: 5px; /* حركة زحزحة خفيفة للمودرن ستايل */
+}
+
+/* الحقوق في الأسفل */
+.footer_bottom {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer_bottom p {
+  font-size: 12px;
+  opacity: 0.4;
+  margin: 0;
+}
